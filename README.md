@@ -1,4 +1,5 @@
 # scream-o-meter
 scream for me
 
-main branch is prod
+# Features
+A fun app that measures how LOUD you can SCREAM
