@@ -26,10 +26,11 @@ const Home = (props: homeProps) => {
           width: 4,
         }}
       />
-
-      <Pressable style={styles.startButton}>
-        <Text style={styles.startButtonText}>Measure</Text>
-      </Pressable>
+      <View style={styles.buttonContainer}>
+        <Pressable style={styles.startButton}>
+          <Text style={styles.startButtonText}>Measure Scream</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };
@@ -52,11 +53,14 @@ const styles = StyleSheet.create({
   },
 
   startButtonText: {
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: 21,
     fontWeight: "bold",
     letterSpacing: 0.25,
     color: "black",
+  },
+  buttonContainer: {
+    // marginTop: "60%",
   },
 });
 
