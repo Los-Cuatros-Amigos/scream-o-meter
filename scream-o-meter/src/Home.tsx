@@ -1,15 +1,26 @@
 import React from "react"; // "react-native-permissions", "react-native-audio-recorder-player"
-import { Button, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import CircularProgress from "react-native-circular-progress-indicator";
 // import { check, PERMISSIONS, request } from "react-native-permissions";
 // import AudioRecorderPlayer from "react-native-audio-recorder-player";
+import { useState } from "react";
 
-interface homeProps {
-  screamValue: number;
-}
+const Home = () => {
+  // let screamValue = props.screamValue;
+  const [screamValue, setScreamValue] = useState(10);
 
-const Home = (props: homeProps) => {
-  let screamValue = props.screamValue;
+  const measureScream1 = () => {
+    setScreamValue(100);
+    // TODO: Implement the logic to measure the decibel level
+    // and update the 'screamValue' state with the measured value.
+    // const measuredDecibels = measuringFunction();
+    // measuringFunction will probably have to vary between platforms
+    // setScreamValue(measuredDecibels);
+  };
+  function measureScream() {
+    setScreamValue(100);
+  }
+
   return (
     <View style={styles.container}>
       <CircularProgress
@@ -19,15 +30,24 @@ const Home = (props: homeProps) => {
         activeStrokeWidth={15}
         inActiveStrokeWidth={20}
         progressValueStyle={{ fontWeight: "100", color: "white" }}
-        activeStrokeSecondaryColor="yellow"
-        inActiveStrokeColor="black"
+        activeStrokeSecondaryColor="red"
+        activeStrokeColor="#2465FD"
+        inActiveStrokeColor="white"
         dashedStrokeConfig={{
           count: 50,
           width: 4,
         }}
+        title={"dB"}
+        titleColor={"white"}
+        titleStyle={{ fontWeight: "bold" }}
       />
 
-      <Pressable style={styles.startButton}>
+      <Pressable
+        onPress={() => {
+          setScreamValue(100);
+        }}
+        style={styles.startButton}
+      >
         <Text style={styles.startButtonText}>Measure</Text>
       </Pressable>
     </View>
