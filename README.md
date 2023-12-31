@@ -25,6 +25,7 @@ scream for me
 ## Leaderboard page
 
 - friends, global option
+- record and playback most popular roars (by upvote)
   - handle discrepancies between different device microphones?
 
 # Design
